@@ -1,23 +1,333 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
-  </body>
-</html>
+
+ <style>
+    /* Google Fonts Import */
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+
+    /* Reset and Base Styles */
+    body { font-family: 'Noto Sans KR', sans-serif; line-height: 1.8; margin: 0; padding: 0; color: #333; background-color: #f7f9fc; }
+    header, section, footer { max-width: 1000px; margin: auto; padding: 20px; box-sizing: border-box; }
+    h1, h2, h3, h4 { color: #004d99; font-weight: 700; line-height: 1.5; margin-top: 1.5em; margin-bottom: 0.8em; }
+    h1 { font-size: 2.5em; text-align: center; color: #004d99; margin-bottom: 0.5em; padding-top: 20px; }
+    h2 { font-size: 2em; border-bottom: 2px solid #e0e7ff; padding-bottom: 10px; margin-top: 2em; }
+    h3 { font-size: 1.5em; color: #2a7eef; margin-bottom: 1em; }
+    a { color: #007bff; text-decoration: none; transition: color 0.3s; }
+    a:hover { color: #0056b3; text-decoration: underline; }
+
+    /* Layout and Component Styles */
+    .cta-button {
+      display: inline-block;
+      padding: 18px 30px;
+      background-color: #ff6f61;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 700;
+      border-radius: 10px;
+      text-decoration: none;
+      margin-top: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s, transform 0.2s;
+      text-align: center;
+    }
+    .cta-button:hover { background-color: #e65c50; transform: translateY(-2px); }
+
+    .card { background-color: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); margin-bottom: 25px; border: 1px solid #e0e0e0; }
+    .highlight-box { background-color: #e0f7fa; border-left: 5px solid #00bcd4; padding: 20px; border-radius: 8px; margin: 20px 0; font-size: 1.1em; line-height: 1.7; }
+    .secondary-highlight { background-color: #fff3e0; border: 1px solid #ffcc80; padding: 15px; border-radius: 8px; margin: 15px 0; }
+
+    /* Tables */
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.95em; line-height: 1.6; }
+    th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+    th { background-color: #f1f8e9; color: #2e7d32; font-weight: 700; }
+    tbody tr:nth-child(even) { background-color: #f9f9f9; }
+
+    /* Forms */
+    .form-section { background-color: #f0f4f8; padding: 30px; border-radius: 10px; margin-top: 30px; }
+    .form-group { margin-bottom: 15px; }
+    .form-group label { display: block; margin-bottom: 8px; font-weight: 700; color: #555; }
+    .form-group input, .form-group select { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-size: 1em; }
+
+    /* Footer */
+    footer { background-color: #333; color: #ccc; text-align: center; padding: 30px; font-size: 14px; margin-top: 40px; }
+    footer p { margin: 5px 0; }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      body { font-size: 15px; }
+      h1 { font-size: 2em; }
+      h2 { font-size: 1.8em; }
+      h3 { font-size: 1.3em; }
+      .cta-button { font-size: 18px; padding: 15px 25px; }
+    }
+  </style>
+
+  <!-- Schema Markup for Naver SEO Optimization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "mainEntity": {
+      "@type": "Article",
+      "headline": "다이렉트 치아보험 비교 및 가입 가이드 | 2026년 최신 정보",
+      "description": "2026년 다이렉트 치아보험 가입 순위, 가격, 보장 내용을 한눈에 비교하고 저렴한 견적을 받아보세요.",
+      "author": {
+        "@type": "Organization",
+        "name": "치아보험 비교센터"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "치아보험 비교센터",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://example.com/logo.png"
+        }
+      },
+      "datePublished": "2026-01-01",
+      "dateModified": "2026-01-15",
+      "articleBody": "대한민국 국민들의 치과 치료비 부담은 매년 증가하고 있습니다. 건강보험심사평가원의 통계에 따르면... 다이렉트 치아보험은 보험설계사를 거치지 않고... 비갱신형 치아보험을 선택하는 것이 장기적으로... 임플란트, 크라운, 충치 치료 등 보장 범위는... 2026년 최신 치아보험 순위 및 가격 비교..."
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Q. 치아보험 면책 기간과 감액 기간은 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A. 면책 기간은 보험 가입 후 일정 기간 동안 보장이 적용되지 않는 기간입니다. 일반적으로 90일로 설정되며, 이 기간 내에 발생한 치료는 보장받을 수 없습니다. 감액 기간은 면책 기간 이후 보장 금액의 일부(예: 50%)만 지급되는 기간을 말하며, 가입 후 1년 또는 2년으로 설정됩니다. 비갱신형 치아보험을 선택할 때 특히 중요하게 확인해야 합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Q. 다이렉트 치아보험의 장점과 단점은 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A. 다이렉트 치아보험의 가장 큰 장점은 설계사 수수료가 없어 일반 상품보다 보험료가 저렴하다는 점입니다. 또한, 모바일이나 온라인으로 간편하게 가입이 가능합니다. 단점으로는 가입자가 스스로 보장 내용을 비교하고 선택해야 한다는 점이 있습니다. 따라서 충분한 정보 습득이 중요합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Q. 갱신형과 비갱신형 중 어떤 것이 더 유리한가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A. 갱신형은 초기 보험료가 저렴하지만, 갱신 시점에 보험료가 인상될 수 있습니다. 비갱신형은 초기 보험료는 높지만 갱신 없이 일정 금액을 유지할 수 있어 장기적으로 총 납입 비용이 더 저렴해질 수 있습니다. 2026년 기준, 많은 전문가들은 장기적인 관점에서 비갱신형 치아보험을 추천합니다."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header>
+    <h1>다이렉트 치아보험 비교 및 가입 가이드 | 2026년 최신 정보</h1>
+    <p>치과 치료 비용 부담, 다이렉트 치아보험으로 현명하게 대비하세요. 2026년 최신 치아보험 순위, 가격, 보장 내용을 한눈에 비교하고 가장 저렴한 견적을 찾아 드립니다.</p>
+    <div style="text-align: center;">
+      <a href="#quote-request" class="cta-button">📞 무료 실시간 보험료 견적 받기</a>
+    </div>
+  </header>
+
+  <section id="introduction">
+    <h2>치과 치료, 왜 치아보험이 필수인가요?</h2>
+    <div class="card">
+      <p>대한민국 국민들의 치과 치료비 부담은 매년 증가하고 있습니다. 건강보험심사평가원의 통계에 따르면 1인당 평균 치과 진료비가 지속적으로 상승하고 있으며, 특히 임플란트, 크라운, 인레이 등 비급여 치료의 경우 수백만 원에 달하는 <strong style="color: #d32f2f;">치과 치료 비용</strong>이 발생합니다. 국민건강보험이 적용되지 않는 치료가 많기 때문에 개인적인 대비가 필수적입니다.</p>
+      <div class="highlight-box">
+        <h4>2026년 치아보험 가입이 중요한 이유</h4>
+        <p>최근 치과 기술 발전과 고령화로 인해 치과 치료 수요는 더욱 높아지고 있습니다. 이에 따라 보험사들은 치아보험 상품을 다양하게 출시하고 있으며, <strong style="color: #d32f2f;">다이렉트 치아보험</strong>을 통해 저렴하게 가입하려는 소비자들이 늘고 있습니다. 가입 조건이 까다로워지기 전에 미리 준비하는 것이 현명합니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="key-keywords">
+    <h2>핵심 키워드 분석: 치아보험 가입 전 필수 확인사항</h2>
+    <div class="card">
+      <p>치아보험 가입을 고려할 때 반드시 알아야 할 <strong style="color: #007bff;">다이렉트 치아보험</strong> 관련 주요 용어를 정리했습니다. '치아보험 순위', '비갱신형', '면책기간' 등 키워드를 중심으로 살펴보세요.</p>
+      <ul style="list-style-type: disc; margin-left: 20px;">
+        <li><strong>갱신형 vs. 비갱신형 치아보험:</strong> 보험료가 갱신 주기마다 변동되는 갱신형과, 처음 가입한 보험료가 만기까지 유지되는 비갱신형 중 본인의 연령과 가입 기간을 고려하여 선택해야 합니다. 일반적으로 비갱신형 치아보험이 장기적인 관점에서 유리한 경우가 많습니다.</li>
+        <li><strong>면책 기간 및 감액 기간:</strong> 치아보험 가입 후 일정 기간(보통 90일) 동안 보장이 되지 않는 면책 기간이 존재합니다. 또한, 감액 기간(보통 1~2년) 동안은 보장 금액의 50%만 지급됩니다. 가입 전 반드시 확인해야 합니다.</li>
+        <li><strong>보철 치료 vs. 보존 치료:</strong> 보철 치료는 임플란트, 브릿지, 틀니 등 치아를 대체하는 치료이며, 보존 치료는 충치 치료(인레이, 온레이, 크라운) 등 치아를 살리는 치료입니다. <strong style="color: #d32f2f;">임플란트 치아보험</strong>을 찾는 분들은 보철 치료 보장 한도를 최우선으로 확인해야 합니다.</li>
+        <li><strong>무진단형 vs. 진단형:</strong> 무진단형은 치과 검진 없이 가입 가능하지만 보장 금액이 비교적 낮거나 면책 기간이 길 수 있습니다. 진단형은 치과 검진이 필요하지만 보장 한도가 높습니다.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="comparison">
+    <h2>다이렉트 치아보험 순위: 2026년 가입자들이 많이 찾는 상품 비교</h2>
+    <div class="card">
+      <p>수많은 보험사에서 제공하는 <strong style="color: #007bff;">다이렉트 치아보험 상품</strong>을 비교하는 것은 쉽지 않습니다. 2026년 상반기 기준으로 가입자들의 관심이 높은 <strong style="color: #d32f2f;">치아보험 추천 순위</strong>와 함께 <strong style="color: #007bff;">치아보험 가격</strong>을 결정하는 주요 요소를 비교 분석하여 현명한 선택을 돕겠습니다.</p>
+
+      <h3>치아보험 주요 상품 비교표 (2026년 기준)</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>구분</th>
+            <th>A사 (가성비 추천)</th>
+            <th>B사 (높은 보장 추천)</th>
+            <th>C사 (무진단 추천)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>주요 특징</strong></td>
+            <td>비갱신형, 낮은 <strong style="color: #d32f2f;">치아보험료</strong>, 갱신 부담 없음</td>
+            <td>임플란트, 크라운 보장 한도 높음, 보장 범위 넓음</td>
+            <td>간편 심사, 무진단 <strong style="color: #007bff;">치아보험 가입</strong>, 고령층 적합</td>
+          </tr>
+          <tr>
+            <td><strong>임플란트 보장 한도 (개당)</strong></td>
+            <td>100만원 ~ 150만원</td>
+            <td>200만원 (업계 최고 수준)</td>
+            <td>50만원 ~ 80만원</td>
+          </tr>
+          <tr>
+            <td><strong>크라운 보장 한도 (개당)</strong></td>
+            <td>20만원 ~ 30만원</td>
+            <td>40만원 ~ 50만원</td>
+            <td>20만원</td>
+          </tr>
+          <tr>
+            <td><strong>면책 기간/감액 기간</strong></td>
+            <td>면책 90일 / 감액 1년</td>
+            <td>면책 90일 / 감액 2년</td>
+            <td>면책 180일 / 감액 2년</td>
+          </tr>
+          <tr>
+            <td><strong>월 예상 보험료 (40대 남성 기준)</strong></td>
+            <td>3만원대</td>
+            <td>4만원대 후반</td>
+            <td>5만원대 초반 (고연령 기준)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="secondary-highlight">
+        <h4><strong style="color: #d32f2f;">치아보험 싼곳</strong>을 찾는다면?</h4>
+        <p>무조건 <strong style="color: #007bff;">치아보험 가격</strong>이 저렴하다고 좋은 것은 아닙니다. 보장 내용 대비 <strong style="color: #007bff;">치아보험 비용</strong>을 비교해야 합니다. 예를 들어, <strong style="color: #d32f2f;">임플란트 비용</strong>이 높은 경우, 보험료가 조금 더 비싸더라도 보장 한도가 높은 상품이 결과적으로 <strong style="color: #007bff;">내돈내산</strong> 관점에서 더 유리할 수 있습니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <h2>다이렉트 치아보험 가입 시 고려해야 할 보장 내용</h2>
+    <div class="card">
+      <p>치아보험은 보장 범위에 따라 가치가 달라집니다. 특히 고액 치료인 임플란트와 크라운 보장을 꼼꼼히 확인해야 합니다. 2026년 기준, <strong style="color: #d32f2f;">치아보험 가입</strong> 시 반드시 확인해야 하는 보장 내용을 자세히 살펴보겠습니다.</p>
+
+      <h3>1. 보철 치료 (임플란트, 브릿지, 틀니)</h3>
+      <p>보철 치료는 치아를 상실했을 때 치아의 기능을 회복하기 위한 치료입니다. <strong style="color: #007bff;">임플란트</strong> 1개당 평균 <strong style="color: #d32f2f;">치과 치료 비용</strong>은 100~200만원 수준으로 매우 높습니다. 따라서 <strong style="color: #007bff;">다이렉트 치아보험</strong> 가입 시 <strong style="color: #d32f2f;">임플란트 보장 한도</strong>를 최대로 설정하는 것이 좋습니다. 최근 상품들은 임플란트 개수 제한 없이 무제한으로 보장하는 경우가 많지만, <strong style="color: #007bff;">치아보험 갱신</strong> 시 보장 내용이 변경될 수 있으니 주의 깊게 살펴보아야 합니다.</p>
+
+      <h3>2. 보존 치료 (크라운, 충전 치료)</h3>
+      <p>충치 치료 시 주로 사용되는 크라운과 충전 치료는 <strong style="color: #d32f2f;">치과 치료 비용</strong> 중에서도 빈도가 높은 항목입니다. 특히 충전 치료의 경우 아말감, 레진, 인레이, 온레이 등 재료에 따라 <strong style="color: #007bff;">치아보험 가격</strong>과 보장 내용이 달라집니다. <strong style="color: #d32f2f;">크라운 보장 한도</strong>는 보통 20~50만원 사이이며, 충전 치료 보장은 재료별로 한도 차이가 있으니 <strong style="color: #007bff;">치아보험 비교</strong> 시 해당 내용을 꼼꼼히 살펴보아야 합니다.</p>
+    </div>
+  </section>
+
+  <section id="process">
+    <h2>다이렉트 치아보험 가입 절차 및 견적 받는 방법</h2>
+    <div class="card">
+      <p>복잡하게 느껴질 수 있는 치아보험 가입 절차를 간소화했습니다. <strong style="color: #007bff;">다이렉트 치아보험 가입</strong>은 온라인으로 진행되어 <strong style="color: #d32f2f;">치아보험 싼곳</strong>을 쉽게 찾을 수 있습니다.</p>
+
+      <div class="secondary-highlight">
+        <h4><strong style="color: #007bff;">치아보험 견적</strong>을 저렴하게 받는 팁</h4>
+        <p>1. <strong style="color: #d32f2f;">비갱신형 치아보험</strong> 위주로 비교하세요. 2. 치아 건강 상태를 정확히 진단하고, 필요한 보장만 선택하세요. 3. <strong style="color: #007bff;">다이렉트 치아보험</strong> 비교 사이트를 활용해 여러 상품의 <strong style="color: #d32f2f;">치아보험료</strong>를 실시간으로 비교하세요.</p>
+      </div>
+
+      <ol>
+        <li><strong>보험 비교 사이트 접속:</strong> 여러 보험사의 <strong style="color: #007bff;">다이렉트 치아보험</strong> 상품을 한눈에 볼 수 있는 비교 사이트에 접속합니다.</li>
+        <li><strong>개인 정보 입력:</strong> 연령, 성별, 과거 치과 치료 이력 등 <strong style="color: #d32f2f;">치아보험 가입 조건</strong>을 입력합니다.</li>
+        <li><strong>상품 비교 및 견적 확인:</strong> 입력한 정보를 바탕으로 여러 보험사의 <strong style="color: #007bff;">치아보험 가격</strong>과 보장 내용을 비교합니다. <strong style="color: #d32f2f;">치아보험 추천 순위</strong>와 함께 <strong style="color: #007bff;">치아보험 견적</strong>을 확인할 수 있습니다.</li>
+        <li><strong>전문가 상담 및 가입:</strong> 궁금한 점은 전문가 상담을 통해 해결하고, 최종 상품을 선택하여 <strong style="color: #d32f2f;">다이렉트 치아보험 가입</strong>을 완료합니다.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="keywords-expansion">
+    <h2>다이렉트 치아보험 관련 심화 키워드 분석</h2>
+    <div class="card">
+      <p>단순히 <strong style="color: #007bff;">치아보험 가격</strong>을 비교하는 것을 넘어, 소비자들이 자주 검색하는 심화 키워드를 통해 더 깊이 있는 정보를 제공합니다. <strong style="color: #d32f2f;">치아보험 가입</strong>을 고민하는 분들이라면 반드시 참고해야 합니다.</p>
+
+      <h3>연관 검색어 분석: '함께 많이 찾는' 키워드</h3>
+      <ul style="list-style-type: square; margin-left: 20px;">
+        <li><strong>어린이 치아보험:</strong> 성인과 달리 충치 발생률이 높은 어린이들을 위한 맞춤형 상품입니다. <strong style="color: #007bff;">다이렉트 어린이 치아보험</strong>은 면책 기간이 짧거나 없는 경우가 많습니다.</li>
+        <li><strong>치아보험 60대 이상:</strong> 고령층을 위한 치아보험은 <strong style="color: #d32f2f;">무진단 치아보험</strong> 형태로 가입이 가능하며, 임플란트 보장이 핵심입니다. 다만 <strong style="color: #007bff;">치아보험 가입 조건</strong>이 까다로울 수 있습니다.</li>
+        <li><strong>비갱신형 치아보험 장단점:</strong> 갱신형 대비 높은 초기 <strong style="color: #007bff;">치아보험료</strong>가 단점이지만, 장기적으로 안정적인 납입이 가능한 것이 장점입니다.</li>
+        <li><strong>치아보험 후기 및 내돈내산:</strong> 실제 가입자들의 <strong style="color: #d32f2f;">치아보험 후기</strong>는 상품 선택에 중요한 참고 자료가 됩니다. <strong style="color: #007bff;">치아보험 추천</strong> 글을 볼 때는 광고성 여부를 잘 판단해야 합니다.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="trust-links">
+    <h2>공신력 있는 외부 정보 및 참고 자료</h2>
+    <div class="card">
+      <p>정확하고 신뢰성 있는 정보 제공을 위해 공인된 기관의 자료를 참고했습니다. <strong style="color: #007bff;">다이렉트 치아보험</strong>과 치과 치료에 대한 이해를 높이는 데 도움이 될 것입니다.</p>
+      <ul style="list-style-type: none; padding-left: 0;">
+        <li><a href="https://www.nhis.or.kr/" target="_blank">국민건강보험공단:</a> 치과 건강보험 급여 항목 및 적용 기준에 대한 공식 정보 확인 (출처: 국민건강보험공단)</li>
+        <li><a href="https://ko.wikipedia.org/wiki/치과보철학" target="_blank">위키피디아:</a> 보철학 및 치과 치료에 대한 일반 정보 (출처: 위키피디아)</li>
+        <li><a href="https://www.dental.or.kr/" target="_blank">대한치과의사협회:</a> 치과 치료 및 치과 보험 관련 전문가 의견 (출처: 대한치과의사협회)</li>
+        <li><a href="https://www.fss.or.kr/" target="_blank">금융감독원:</a> 치아보험 상품 비교 공시 및 소비자 유의사항 (출처: 금융감독원)</li>
+        <li><a href="https://namu.wiki/w/치아보험" target="_blank">나무위키:</a> 치아보험에 대한 일반적인 정의 및 상세 설명 (출처: 나무위키)</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="quote-request">
+    <h2>맞춤형 다이렉트 치아보험 견적 받기</h2>
+    <div class="card form-section">
+      <p>복잡한 <strong style="color: #007bff;">치아보험 비교</strong>, 이제 전문가의 도움으로 간편하게 해결하세요. <strong style="color: #d32f2f;">2026년 최신 다이렉트 치아보험 순위</strong>를 바탕으로 고객님께 가장 적합한 <strong style="color: #007bff;">치아보험 추천</strong> 상품의 <strong style="color: #d32f2f;">치아보험 견적</strong>을 실시간으로 받아보세요.</p>
+
+      <form action="#" method="POST">
+        <div class="form-group">
+          <label for="name">성함</label>
+          <input type="text" id="name" name="name" placeholder="이름을 입력해주세요" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">연락처</label>
+          <input type="tel" id="phone" name="phone" placeholder="010-0000-0000" required>
+        </div>
+        <div class="form-group">
+          <label for="age">생년월일</label>
+          <input type="text" id="age" name="age" placeholder="예: 19800101" required>
+        </div>
+        <div class="form-group">
+          <label for="current-status">현재 치아 상태</label>
+          <select id="current-status" name="current-status" required>
+            <option value="">-- 선택 --</option>
+            <option value="good">양호 (최근 1년 내 치료 이력 없음)</option>
+            <option value="some-treatment">일부 치료 이력 있음 (충치, 신경 치료 등)</option>
+            <option value="implant-needed">임플란트 또는 크라운 계획 중</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="insurance-goal">가입 목적</label>
+          <select id="insurance-goal" name="insurance-goal" required>
+            <option value="">-- 선택 --</option>
+            <option value="low-price">저렴한 보험료가 최우선</option>
+            <option value="high-implant">임플란트 보장이 중요함</option>
+            <option value="filling">충치 치료 보장이 중요함</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="terms-agree"><input type="checkbox" id="terms-agree" required> 개인정보 수집 및 이용 동의 (필수)</label>
+        </div>
+        <button type="submit" class="cta-button" style="width: 100%; margin: 0; padding: 15px;">무료 견적 신청</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2>자주 묻는 질문 (FAQ)</h2>
+    <div class="card">
+      <h3>Q. 치아보험 면책 기간이 짧은 상품이 있나요?</h3>
+      <p>A. 네, 일부 <strong style="color: #007bff;">다이렉트 치아보험</strong> 상품 중에는 면책 기간이 90일 미만인 상품도 있습니다. 하지만 일반적으로 <strong style="color: #d32f2f;">치아보험 가입</strong> 후 바로 치료를 받으려는 목적으로 면책 기간이 짧은 상품을 찾는 경우, 보험사에서 가입을 거절할 수 있습니다. <strong style="color: #007bff;">치아보험 가입</strong>은 건강한 치아 상태일 때 미리 해두는 것이 가장 좋습니다.</p>
+
+      <h3>Q. <strong style="color: #007bff;">임플란트 비용</strong>은 보험으로 얼마나 보장받을 수 있나요?</h3>
+      <p>A. 상품마다 차이가 크지만, <strong style="color: #d32f2f;">다이렉트 치아보험 추천</strong> 상품 중에서는 임플란트 1개당 100만원에서 최대 200만원까지 보장되는 경우가 많습니다. <strong style="color: #007bff;">치아보험 가격</strong>을 결정하는 중요한 요소이므로, <strong style="color: #d32f2f;">치아보험 견적</strong>을 비교할 때 보장 한도를 꼭 확인해야 합니다.</p>
+
+      <h3>Q. <strong style="color: #d32f2f;">비갱신형 치아보험</strong>의 <strong style="color: #007bff;">장단점</strong>은 무엇인가요?</h3>
+      <p>A. <strong style="color: #d32f2f;">비갱신형 치아보험</strong>의 가장 큰 장점은 보험료 변동 없이 장기간 유지할 수 있다는 점입니다. 단점으로는 초기 <strong style="color: #007bff;">치아보험료</strong>가 갱신형보다 높다는 점입니다. 장기적으로 보았을 때 <strong style="color: #d32f2f;">비갱신형 치아보험</strong>이 총 납입액에서 더 <strong style="color: #007bff;">저렴한 치아보험</strong>이 될 가능성이 높습니다.</p>
+    </div>
+  </section>
+
+
+  
